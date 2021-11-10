@@ -1,0 +1,183 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>formilaoire</title>
+     <link rel="stylesheet" href="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.css">
+</head>
+<body>
+
+
+      <form method="POST" action="" id="form1">
+
+        <input type="text" name="nom" id="nom" placeholder="votre nom">
+        <p style="color:red" id=""> </p> <br>
+
+        <input type="text" name="nom" id="prenom" placeholder="votre prenom"><br>
+
+
+        <input type="text" name="nom" id="date" placeholder="votre date"><br>
+
+
+        <input type="text" name="nom" id="numero" placeholder="votre numero"><br>
+
+        
+  
+        <input type="text" name="nom" id="pays" placeholder="votre pays"><br>
+
+
+        <input type="submit" name="envoyer" id="submit">
+          
+      </form>
+  
+    <p style="color:red" id="erreur"></p>
+
+    <script type="text/javascript">
+
+
+
+
+
+        
+        
+                    document.getElementById("form1").addEventListener("submit",function(e)
+
+
+                        {
+                        e.preventDefault();
+
+                        var erreur;
+
+                        var nom = document.getElementById("nom");
+
+                        var prenom = document.getElementById("prenom");
+
+                        var date = document.getElementById("date");
+
+                        var numero = document.getElementById("numero");
+
+                        var pays = document.getElementById("pays");
+
+
+                        if (!nom.value) {
+                            erreur = "veillez renseigner votre nom";
+                        }
+
+                        if (!prenom.value) {
+                             erreur = "veillez renseigner votre prenom";
+                        }
+
+                        if (!date.value) {
+                             erreur = "veillez renseigner votre date";
+                        }
+
+                        if (!numero.value) {
+                             erreur = "veillez renseigner votre nnumero";
+                        }
+
+                        if (!pays.value) {
+                             erreur = "veillez renseigner votre pays";
+                        }
+
+                        if (erreur) {
+                            e.preventDefault();
+                            document.getElementById("erreur").innerHTML = erreur;
+                            return false;
+                        }else{
+                            alert("formulaire presenté avec succes!");
+                        }
+
+                      
+
+
+                    });
+    
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php 
+ if(isset($_POST['envoyer'])){
+ 	if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['date']) AND isset($_POST['numero']) AND isset($_POST['pays'])){
+ 		if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['date']) AND !empty($_POST['numero']) AND !empty($_POST['pays'])){
+
+ 			$nom=htmlspecialchars($_POST['nom']);
+ 			$nom=htmlspecialchars($_POST['prenom']);
+ 			$nom=htmlspecialchars($_POST['date']);
+ 			$nom=htmlspecialchars($_POST['tel']);
+ 			$nom=htmlspecialchars($_POST['pays']);
+ 			
+
+
+
+ 		}
+ 	}
+ }
+
+
+
+ ?>
